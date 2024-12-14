@@ -32,9 +32,9 @@ const NavBar = () => {
         )}
         {user && (
           <div>
-            <button className="block w-full px-4 py-2 text-white">
+            <Link to="/profile"><button className="block w-full px-4 py-2 text-white">
               Profile
-            </button>
+            </button></Link>
             <button
               className="block w-full px-4 py-2 text-white"
               onClick={handleLogout}
