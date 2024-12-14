@@ -10,6 +10,7 @@ const Login = () => {
   const [password, setPassword] = useState("Arvind@019");
   const dispatch = useDispatch();
   const navigate  = useNavigate();
+  const [error, setError] = useState("");
 
   const handleLogin = async () => {
     try{
@@ -24,7 +25,7 @@ const Login = () => {
       dispatch(addUser(res.data));
       navigate("/feed");
     }catch(err){
-      console.error(err);
+      setError(err?.response?.data || "Something went wrong...");
     }
   }
 
@@ -59,8 +60,9 @@ const Login = () => {
               />
             </label>
           </div>
+          <p className="text-red-600">{error}</p>
           <div className="card-actions flex justify-center">
-            <button className="p-2 rounded-lg px-3 font-bold bg-red-700" onClick={handleLogin}>Login</button>
+            <button className="px-8 p-2 rounded-lg font-bold bg-red-700" onClick={handleLogin}>Login</button>
           </div>
         </div>
       </div>
