@@ -23,24 +23,27 @@ const NavBar = () => {
             devTinder
           </Link>
         </div>
-        {user ? (
-          <p className="mr-6">
-            Welcome, {user.firstName + " " + user.lastName}
-          </p>
-        ) : (
-          <p className="mr-6">Welcome</p>
-        )}
+        {user && <p className="mr-6">Welcome, {user.firstName}</p>}
         {user && (
-          <div>
-            <Link to="/profile"><button className="block w-full px-4 py-2 text-white">
-              Profile
-            </button></Link>
-            <button
-              className="block w-full px-4 py-2 text-white"
-              onClick={handleLogout}
-            >
-              Logout
-            </button>
+          <div className="navbar-center hidden lg:flex">
+            <ul className="menu menu-horizontal px-1">
+              <li>
+                <details>
+                  <summary>Menu</summary>
+                  <ul className="p-2">
+                    <li className="text-black font-bold">
+                      <Link to="/profile">Profile</Link>
+                    </li>
+                    <li
+                      className="text-black cursor-pointer ml-3 hover:bg-gray-200 p-1 rounded-md font-bold"
+                      onClick={handleLogout}
+                    >
+                      Logout
+                    </li>
+                  </ul>
+                </details>
+              </li>
+            </ul>
           </div>
         )}
       </div>

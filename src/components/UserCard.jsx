@@ -1,13 +1,13 @@
 /* eslint-disable react/prop-types */
 const UserCard = ({user}) => {
-  const {firstName, lastName, photoUrl, skills, age, about} = user;
+  const {firstName, lastName, photoUrl, age, about} = user;
   return (
     <div>
       <div className="card bg-gray-900 w-80 text-white shadow-xl">
         <figure>
           <img className="mt-4 rounded-md"
             src={photoUrl}
-            alt="Shoes"
+            alt="user"
           />
         </figure>
         <div className="card-body">
