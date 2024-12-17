@@ -25,7 +25,7 @@ const NavBar = () => {
         </div>
         {user && <p className="mr-6">Welcome, {user.firstName}</p>}
         {user && (
-          <div className="navbar-center hidden lg:flex">
+          <div className="navbar-center hidden lg:flex mr-7">
             <ul className="menu menu-horizontal px-1">
               <li>
                 <details>
@@ -34,12 +34,16 @@ const NavBar = () => {
                     <li className="text-black font-bold">
                       <Link to="/profile">Profile</Link>
                     </li>
+                    <li className="text-black font-bold">
+                      <Link to="/connections">Connection</Link>
+                    </li>
                     <li
                       className="text-black cursor-pointer ml-3 hover:bg-gray-200 p-1 rounded-md font-bold"
                       onClick={handleLogout}
                     >
                       Logout
                     </li>
+                    
                   </ul>
                 </details>
               </li>
