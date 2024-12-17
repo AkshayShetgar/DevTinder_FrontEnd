@@ -8,7 +8,7 @@ import UserCard from "./UserCard";
 const Feed = () => {
   const dispatch = useDispatch();
   const feed = useSelector((store) => store.feed);
-  // console.log(feed);
+  console.log(feed);
 
   const getFeed = async () => {
     if (feed) return;
@@ -27,8 +27,12 @@ const Feed = () => {
   }, []);
 
   return feed && (
-    <div className="flex justify-center my-10">
-      <UserCard user={feed[2]}/>
+    <div className="flex flex-wrap mb-20">
+      {
+        feed.map((feed, index) => 
+          <UserCard key={index} user={feed}/>
+        )
+      }
     </div>
   );
 };
