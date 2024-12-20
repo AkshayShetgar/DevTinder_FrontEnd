@@ -26,14 +26,14 @@ const Connections = () => {
   if (connections.length === 0) return <h1 className="flex justify-center mt-10 font-bold"> No Connections Found 😭</h1>;
 
   return (
-    <div className="text-center">
+    <div className="text-center h-[1000px]">
       <h1 className="text-2xl font-bold">Connections</h1>
       {connections.map((connection) => {
         const { firstName, lastName, photoUrl } = connection;
         return (
-          <div className="flex text-white m-3 mx-auto mb-3 p-3 bg-neutral rounded-md w-1/2" key={firstName}>
-            <div>
-              <img className="w-16 rounded-full"
+          <div className="flex text-white m-3 mx-auto mb-3 p-3 bg-neutral rounded-md w-[350px]" key={firstName}>
+            <div className="w-16">
+              <img className="w-20 rounded-full h-16"
                 alt="photo"
                 src={
                   photoUrl ||
@@ -41,7 +41,7 @@ const Connections = () => {
                 }
               ></img>
             </div>
-            <div className="ml-4 mt-3.5 font-bold">{firstName + " " + lastName}</div>
+            <div className="font-bold ml-4 mt-3.5">{firstName + " " + lastName}</div>
           </div>
         );
       })}

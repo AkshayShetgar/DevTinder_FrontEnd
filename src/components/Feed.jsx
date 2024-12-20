@@ -8,7 +8,7 @@ import UserCard from "./UserCard";
 const Feed = () => {
   const dispatch = useDispatch();
   const feed = useSelector((store) => store.feed);
-  console.log(feed);
+  // console.log(feed);
 
   const getFeed = async () => {
     if (feed) return;
@@ -26,14 +26,15 @@ const Feed = () => {
     getFeed();
   }, []);
 
-  return feed && (
-    <div className="flex flex-wrap mb-20">
-      {
-        feed.map((feed, index) => 
-          <UserCard key={index} user={feed}/>
-        )
-      }
-    </div>
+  if(!feed) return;
+  if(feed.length <= 0 ) return <h1 className="flex justify-center font-bold py-10 text-black">No more users found 😒</h1>
+
+  return (
+    feed && (
+      <div className="flex flex-wrap mb-2">
+        <UserCard user={feed[0]} />
+      </div>
+    )
   );
 };
 
