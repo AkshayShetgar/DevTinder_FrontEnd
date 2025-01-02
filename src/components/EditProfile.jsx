@@ -11,7 +11,7 @@ const EditProfile = ({ user }) => {
   const [lastName, setLastName] = useState(user.lastName);
   const [about, setAbout] = useState(user.about);
   const [skills, setSkills] = useState(user.skills);
-  const [age, setAge] = useState(user.age || "");
+  const [age, setAge] = useState(user.age);
   const [photoUrl, setPhotoUrl] = useState(user.photoUrl);
   const dispatch = useDispatch();
   const [toast, setToast] = useState(false);
@@ -104,8 +104,9 @@ const EditProfile = ({ user }) => {
                 </div>
                 <input
                   type="text"
-                  value={age}
+                  value={age || ""}
                   onChange={(e) => setAge(e.target.value)}
+                  placeholder="Type here"
                   className="input input-bordered w-full max-w-xs text-black"
                 />
               </label>
@@ -115,7 +116,7 @@ const EditProfile = ({ user }) => {
                 </div>
                 <input
                   type="text"
-                  value={photoUrl}
+                  value={photoUrl || ""}
                   onChange={(e) => setPhotoUrl(e.target.value)}
                   placeholder="Type here"
                   className="input input-bordered w-full max-w-xs text-black"

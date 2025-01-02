@@ -11,18 +11,19 @@ import Request from "./components/Request";
 function App() {
   return (
     <>
-    <Provider store={appStore}>
-      <BrowserRouter basename="/">
-        <Routes>
-          <Route path="/" element={<Body />}>
-            <Route path="login" element={<Login />} />
-            <Route path="feed" element={<Feed />} />
-            <Route path="profile" element={<Profile />} />
-            <Route path="connections" element={<Connections />} />
-            <Route path="requests" element={<Request />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      <Provider store={appStore}>
+        <BrowserRouter basename="/">
+          <Routes>
+            <Route path="/" element={<Body />}>
+              <Route path="/" element={<Login />} />
+              <Route path="login" element={<Login />} />
+              <Route path="feed" element={<Feed />} />
+              <Route path="profile" element={<Profile />} />
+              <Route path="connections" element={<Connections />} />
+              <Route path="requests" element={<Request />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
       </Provider>
     </>
   );

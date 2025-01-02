@@ -27,7 +27,7 @@ const Login = () => {
           withCredentials: true,
         }
       );
-      console.log(res.data);
+      // console.log(res.data);
       dispatch(addUser(res.data));
       navigate("/feed");
     } catch (err) {
@@ -57,7 +57,10 @@ const Login = () => {
 
   return (
     <div className="flex justify-center my-10">
-      <div className="card bg-base-content text-primary-content w-96">
+      <div className="relative -mt-10 ">
+        <img  src="https://tinder.com/static/build/8ad4e4299ef5e377d2ef00ba5c94c44c.webp" />
+      </div>
+      <div className="card absolute bg-base-content text-primary-content w-96">
         <div className="card-body">
           <h2 className="card-title font-bold">
             {isLoginForm ? "Login" : "Sign-Up"}

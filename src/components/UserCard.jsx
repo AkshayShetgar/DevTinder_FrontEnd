@@ -23,7 +23,7 @@ const UserCard = ({user}) => {
         </figure>
         <div className="card-body">
           <h3 className="-mt-4 -ml-3">{about}</h3>
-          <h2 className="card-title -mt-2 -ml-3">{firstName + " "+ lastName + ", " + (age || "")}</h2>
+          <h2 className="card-title -mt-2 -ml-3">{firstName + " "+ lastName + ", " + age}</h2>
           <div className="card-actions flex justify-between">
             <button className="bg-red-600 p-2 px-6 font-bold rounded-md" onClick={() => handleSendRequest("ignored", user._id)}>Ignore</button>
             <button className="bg-pink-500 p-2 rounded-md font-bold" onClick={() => handleSendRequest("interested", user._id)}>Send Request</button>

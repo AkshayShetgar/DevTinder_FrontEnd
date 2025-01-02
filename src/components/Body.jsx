@@ -13,11 +13,12 @@ const Body = () => {
   const userData = useSelector((store) => store.user);
 
   const fetchUser = async () => {
-    if (userData) return;
+    if(userData) return;
     try {
       const res = await axios.get(BASE_URL + "/profile/view",
         {withCredentials: true},
       );
+      console.log(res.data);
       dispatch(addUser(res.data));
     } catch (err) {
       if (err.status === 401) {
