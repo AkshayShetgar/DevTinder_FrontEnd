@@ -104,7 +104,7 @@ const EditProfile = ({ user }) => {
                 </div>
                 <input
                   type="text"
-                  value={age || ""}
+                  value={age}
                   onChange={(e) => setAge(e.target.value)}
                   placeholder="Type here"
                   className="input input-bordered w-full max-w-xs text-black"
@@ -116,7 +116,7 @@ const EditProfile = ({ user }) => {
                 </div>
                 <input
                   type="text"
-                  value={photoUrl || ""}
+                  value={photoUrl}
                   onChange={(e) => setPhotoUrl(e.target.value)}
                   placeholder="Type here"
                   className="input input-bordered w-full max-w-xs text-black"
