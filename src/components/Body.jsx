@@ -13,20 +13,23 @@ const Body = () => {
   const userData = useSelector((store) => store.user);
 
   const fetchUser = async () => {
-    if (userData) return; // If user data is already available, return early
+    if(userData) return;
     try {
-      const res = await axios.get(BASE_URL + "/profile/view", { withCredentials: true });
-      dispatch(addUser(res.data)); // Dispatch the fetched user data
+      const res = await axios.get(BASE_URL + "/profile/view",
+        {withCredentials: true},
+      );
+      console.log(res.data);
+      dispatch(addUser(res.data));
     } catch (err) {
-      if (err.response?.status === 401) {
-        navigate("/login"); // Navigate to login if user is unauthorized
+      if (err.status === 401) {
+        navigate("/login");
       }
     }
   };
 
   useEffect(() => {
     fetchUser();
-  }, [userData, dispatch, navigate]); // Added dependencies to handle updates correctly
+  }, []);
 
   return (
     <div>
@@ -38,3 +41,5 @@ const Body = () => {
 };
 
 export default Body;
+
+
