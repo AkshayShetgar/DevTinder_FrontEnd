@@ -40,6 +40,9 @@ const NavBar = () => {
                     <li className="text-black font-bold">
                       <Link to="/requests">Requests</Link>
                     </li>
+                    <li className="text-black font-bold">
+                      <Link to="/premium">Premium</Link>
+                    </li>
                     <li
                       className="text-black cursor-pointer ml-3 hover:bg-gray-200 p-1 rounded-md font-bold"
                       onClick={handleLogout}
