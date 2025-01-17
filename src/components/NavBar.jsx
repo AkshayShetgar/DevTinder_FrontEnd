@@ -49,13 +49,15 @@ const NavBar = () => {
                     >
                       Logout
                     </li>
-                    
                   </ul>
                 </details>
               </li>
             </ul>
           </div>
         )}
+        {
+          !user && <Link to="/login"><button className="bg-green-900 p-3 font-semibold mr-11 w-32 pl-3 hover:rounded-3xl">Login</button></Link>
+        }
       </div>
     </div>
   );
